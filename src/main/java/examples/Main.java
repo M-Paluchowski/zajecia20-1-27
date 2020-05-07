@@ -1,6 +1,8 @@
+package examples;
+
 import java.sql.*;
 
-public class Main {
+class Main {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
 
@@ -23,8 +25,8 @@ public class Main {
         Statement statementTwo = connection.createStatement();
         String insertSql = "INSERT INTO city (Name, CountryCode, District, Population) VALUES ('Psinka Dolna', 'POL', 'Dolny Slask', 30000)";
         int modified = statementTwo.executeUpdate(insertSql);
-        statementTwo.close();
 
+        statementTwo.close();
         connection.close();
     }
 }
